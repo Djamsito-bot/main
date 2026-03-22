@@ -1,0 +1,20 @@
+<div class="product-card">
+  <a href="{{ product.url | within: collection }}">
+    <div class="product-card__image">
+      {% if product.images.size > 0 %}
+        <img src="{{ product.images.first | img_url: 'medium' }}" alt="{{ product.title }}">
+      {% else %}
+        <img src="{{ 'placeholder.png' | asset_url }}" alt="{{ product.title }}">
+      {% endif %}
+    </div>
+    <div class="product-card__info">
+      <h2 class="product-card__title">{{ product.title }}</h2>
+      <p class="product-card__price">{{ product.price | money }}</p>
+      {% if product.available %}
+        <span class="product-card__availability">In Stock</span>
+      {% else %}
+        <span class="product-card__availability">Out of Stock</span>
+      {% endif %}
+    </div>
+  </a>
+</div>

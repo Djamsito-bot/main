@@ -1,0 +1,44 @@
+{% schema %}
+{
+  "name": "Featured Collection",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Featured Collection Settings"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Select a collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "label": "Number of products to show",
+      "default": 4,
+      "min": 1,
+      "max": 12
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="featured-collection">
+  {% if section.settings.collection %}
+    <h2 class="featured-collection__title">{{ section.settings.collection.title }}</h2>
+    <div class="featured-collection__grid">
+      {% assign products = section.settings.collection.products | limit: section.settings.products_to_show %}
+      {% for product in products %}
+        {% include 'product-card' with product %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No collection selected.</p>
+  {% endif %}
+</div>

@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "hero-banner": {
+      "type": "hero-banner",
+      "settings": {}
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "featured",
+        "title": "Featured Seiko Watches"
+      }
+    }
+  },
+  "order": ["hero-banner", "featured-collection"]
+}

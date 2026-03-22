@@ -1,0 +1,46 @@
+{
+  "current": {
+    "color_scheme": "default",
+    "font": "Arial",
+    "header": {
+      "logo": "logo.png",
+      "menu": [
+        {
+          "title": "Home",
+          "link": "/"
+        },
+        {
+          "title": "Shop",
+          "link": "/collections/all"
+        },
+        {
+          "title": "About",
+          "link": "/pages/about"
+        },
+        {
+          "title": "Contact",
+          "link": "/pages/contact"
+        }
+      ]
+    },
+    "footer": {
+      "copyright": "© 2023 Seiko Watch. All rights reserved.",
+      "social_links": {
+        "facebook": "https://facebook.com/seikowatch",
+        "instagram": "https://instagram.com/seikowatch",
+        "twitter": "https://twitter.com/seikowatch"
+      }
+    },
+    "hero_banner": {
+      "image": "hero-banner.jpg",
+      "title": "Discover the Elegance of Seiko",
+      "subtitle": "Timeless watches for every occasion",
+      "button_text": "Shop Now",
+      "button_link": "/collections/all"
+    },
+    "featured_collection": {
+      "title": "Featured Watches",
+      "collection_id": "featured-watches"
+    }
+  }
+}

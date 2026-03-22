@@ -1,0 +1,11 @@
+<div class="breadcrumb">
+  <a href="{{ routes.root_url }}">Home</a>
+  {% if collection %}
+    <span> / </span>
+    <a href="{{ collection.url }}">{{ collection.title }}</a>
+  {% endif %}
+  {% if product %}
+    <span> / </span>
+    <a href="{{ product.url }}">{{ product.title }}</a>
+  {% endif %}
+</div>

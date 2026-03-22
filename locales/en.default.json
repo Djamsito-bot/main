@@ -1,0 +1,45 @@
+{
+  "general": {
+    "title": "Seiko Watch",
+    "description": "Explore our collection of Seiko watches, combining elegance and precision.",
+    "keywords": "Seiko, watches, luxury, timepieces"
+  },
+  "header": {
+    "home": "Home",
+    "shop": "Shop",
+    "about": "About Us",
+    "contact": "Contact",
+    "cart": "Cart"
+  },
+  "footer": {
+    "copyright": "© 2023 Seiko Watch. All rights reserved.",
+    "social": {
+      "follow_us": "Follow Us",
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "twitter": "Twitter"
+    }
+  },
+  "hero": {
+    "title": "Discover Timeless Elegance",
+    "subtitle": "Shop the latest Seiko watches",
+    "cta": "Shop Now"
+  },
+  "product": {
+    "details": {
+      "description": "Product Description",
+      "price": "Price",
+      "add_to_cart": "Add to Cart",
+      "in_stock": "In Stock",
+      "out_of_stock": "Out of Stock"
+    }
+  },
+  "collection": {
+    "featured": "Featured Collection",
+    "view_all": "View All Products"
+  },
+  "404": {
+    "not_found": "Page Not Found",
+    "go_home": "Go to Home"
+  }
+}

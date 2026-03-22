@@ -1,0 +1,27 @@
+{
+  "name": "seiko-watch-theme",
+  "version": "1.0.0",
+  "description": "A Shopify theme for showcasing Seiko watches.",
+  "main": "assets/theme.js",
+  "scripts": {
+    "build": "npm run build-css && npm run build-js",
+    "build-css": "node-sass assets/theme.scss assets/theme.css",
+    "build-js": "webpack assets/theme.js --output-path=assets/"
+  },
+  "keywords": [
+    "shopify",
+    "theme",
+    "seiko",
+    "watches"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^6.0.0",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^4.0.0"
+  },
+  "devDependencies": {
+    "sass": "^1.32.0"
+  }
+}

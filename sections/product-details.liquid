@@ -1,0 +1,30 @@
+<div class="product-details">
+  <h1>{{ product.title }}</h1>
+  <div class="product-images">
+    {% for image in product.images %}
+      <img src="{{ image | img_url: 'large' }}" alt="{{ image.alt | escape }}" />
+    {% endfor %}
+  </div>
+  <div class="product-description">
+    {{ product.description | escape }}
+  </div>
+  <div class="product-price">
+    {% if product.compare_at_price > product.price %}
+      <span class="price">{{ product.price | money }}</span>
+      <span class="compare-at-price">{{ product.compare_at_price | money }}</span>
+    {% else %}
+      <span class="price">{{ product.price | money }}</span>
+    {% endif %}
+  </div>
+  <div class="product-options">
+    {% for option in product.options %}
+      <label for="option-{{ option.name }}">{{ option.name }}</label>
+      <select id="option-{{ option.name }}" name="options[{{ option.name }}]">
+        {% for value in option.values %}
+          <option value="{{ value }}">{{ value }}</option>
+        {% endfor %}
+      </select>
+    {% endfor %}
+  </div>
+  <button type="submit" class="add-to-cart">Add to Cart</button>
+</div>
