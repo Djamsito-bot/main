@@ -1,25 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
-    <title>Seiko Watch</title>
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <a href="{{ '/' }}">
-                <img src="{{ 'logo.png' | asset_url }}" alt="Seiko Watch Logo">
-            </a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="{{ collections.all.url }}">Shop</a></li>
-                <li><a href="{{ pages.about.url }}">About</a></li>
-                <li><a href="{{ pages.contact.url }}">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-</body>
-</html>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-header__logo" href="{{ '/' | absolute_url }}">
+      {% if section.settings.logo != blank %}
+        <img src="{{ section.settings.logo | img_url: '200x' }}" alt="{{ shop.name }}">
+      {% else %}
+        <span>{{ shop.name }}</span>
+      {% endif %}
+    </a>
+    <nav>
+      <ul class="site-nav">
+        <li><a href="{{ collections.all.url }}">Shop</a></li>
+        <li><a href="/pages/about">About</a></li>
+        <li><a href="/pages/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    }
+  ]
+}
+{% endschema %}

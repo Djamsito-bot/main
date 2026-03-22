@@ -1,10 +1,42 @@
-<div class="hero-banner">
+<section class="hero-banner">
   <div class="hero-banner__content">
-    <h1 class="hero-banner__title">Discover the Timeless Elegance of Seiko Watches</h1>
-    <p class="hero-banner__subtitle">Experience precision and style with our exclusive collection.</p>
-    <a href="/collections/all" class="btn btn-primary">Shop Now</a>
+    <span class="hero-banner__eyebrow">Collection {{ 'now' | date: '%Y' }}</span>
+    <h1 class="hero-banner__title">
+      {{ section.settings.heading | default: 'L\'Élégance du <span>Temps</span>' }}
+    </h1>
+    <p class="hero-banner__subtitle">
+      {{ section.settings.subheading | default: 'Découvrez notre collection exclusive de montres Seiko. Précision japonaise, style intemporel.' }}
+    </p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+      <a href="/collections/all" class="btn btn-primary">{{ section.settings.cta_text | default: 'Voir la collection' }}</a>
+      <a href="/pages/about" class="btn btn-outline">Notre histoire</a>
+    </div>
   </div>
-  <div class="hero-banner__image">
-    <img src="{{ 'hero-banner-image.jpg' | asset_url }}" alt="Seiko Watch" />
-  </div>
-</div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titre",
+      "default": "L'Élégance du Temps"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Sous-titre",
+      "default": "Découvrez notre collection exclusive de montres Seiko. Précision japonaise, style intemporel."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Texte bouton",
+      "default": "Voir la collection"
+    }
+  ],
+  "presets": [{ "name": "Hero Banner" }]
+}
+{% endschema %}
