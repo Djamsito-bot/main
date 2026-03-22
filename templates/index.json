@@ -4,18 +4,16 @@
       "type": "hero-banner",
       "settings": {}
     },
+    "collections-grid": {
+      "type": "collections-grid",
+      "settings": {}
+    },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
         "collection": "featured",
         "title": "Featured Seiko Watches"
       }
-    }
-  },
-    ,
-    "collections-grid": {
-      "type": "collections-grid",
-      "settings": {}
     }
   },
   "order": ["hero-banner", "collections-grid", "featured-collection"]
