@@ -6,28 +6,36 @@
 
     <div class="collections-grid__cards">
 
-      <a href="/collections/ladies" class="collection-card">
+      <a href="/collections/{{ section.settings.card1_collection | default: 'ladies' }}" class="collection-card">
         <div class="collection-card__image-wrapper">
-          <img src="{{ 'watch-ladies.jpg' | asset_url }}" alt="Montres femme Seiko" loading="lazy">
+          {% if section.settings.card1_image %}
+            <img src="{{ section.settings.card1_image | img_url: '800x' }}" alt="{{ section.settings.card1_title }}" loading="lazy">
+          {% else %}
+            <div class="collection-card__placeholder"></div>
+          {% endif %}
           <div class="collection-card__overlay"></div>
         </div>
         <div class="collection-card__body">
-          <span class="collection-card__label">Élégance</span>
-          <h3 class="collection-card__title">Collection Femme</h3>
-          <p class="collection-card__desc">Finesse et raffinement pour accompagner chaque moment de votre quotidien.</p>
+          <span class="collection-card__label">{{ section.settings.card1_label | default: 'Élégance' }}</span>
+          <h3 class="collection-card__title">{{ section.settings.card1_title | default: 'Collection Femme' }}</h3>
+          <p class="collection-card__desc">{{ section.settings.card1_desc | default: 'Finesse et raffinement pour accompagner chaque moment de votre quotidien.' }}</p>
           <span class="collection-card__link">Découvrir →</span>
         </div>
       </a>
 
-      <a href="/collections/divers" class="collection-card">
+      <a href="/collections/{{ section.settings.card2_collection | default: 'divers' }}" class="collection-card">
         <div class="collection-card__image-wrapper">
-          <img src="{{ 'watch-diver.jpg' | asset_url }}" alt="Montres plongée Seiko" loading="lazy">
+          {% if section.settings.card2_image %}
+            <img src="{{ section.settings.card2_image | img_url: '800x' }}" alt="{{ section.settings.card2_title }}" loading="lazy">
+          {% else %}
+            <div class="collection-card__placeholder"></div>
+          {% endif %}
           <div class="collection-card__overlay"></div>
         </div>
         <div class="collection-card__body">
-          <span class="collection-card__label">Aventure</span>
-          <h3 class="collection-card__title">Collection Plongée</h3>
-          <p class="collection-card__desc">Robustesse et précision pour les explorateurs des profondeurs.</p>
+          <span class="collection-card__label">{{ section.settings.card2_label | default: 'Aventure' }}</span>
+          <h3 class="collection-card__title">{{ section.settings.card2_title | default: 'Collection Plongée' }}</h3>
+          <p class="collection-card__desc">{{ section.settings.card2_desc | default: 'Robustesse et précision pour les explorateurs des profondeurs.' }}</p>
           <span class="collection-card__link">Découvrir →</span>
         </div>
       </a>
@@ -39,6 +47,75 @@
 {% schema %}
 {
   "name": "Collections Grid",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Carte 1 — Collection Femme"
+    },
+    {
+      "type": "image_picker",
+      "id": "card1_image",
+      "label": "Photo"
+    },
+    {
+      "type": "text",
+      "id": "card1_label",
+      "label": "Étiquette",
+      "default": "Élégance"
+    },
+    {
+      "type": "text",
+      "id": "card1_title",
+      "label": "Titre",
+      "default": "Collection Femme"
+    },
+    {
+      "type": "textarea",
+      "id": "card1_desc",
+      "label": "Description",
+      "default": "Finesse et raffinement pour accompagner chaque moment de votre quotidien."
+    },
+    {
+      "type": "text",
+      "id": "card1_collection",
+      "label": "Handle de collection (URL)",
+      "default": "ladies"
+    },
+    {
+      "type": "header",
+      "content": "Carte 2 — Collection Plongée"
+    },
+    {
+      "type": "image_picker",
+      "id": "card2_image",
+      "label": "Photo"
+    },
+    {
+      "type": "text",
+      "id": "card2_label",
+      "label": "Étiquette",
+      "default": "Aventure"
+    },
+    {
+      "type": "text",
+      "id": "card2_title",
+      "label": "Titre",
+      "default": "Collection Plongée"
+    },
+    {
+      "type": "textarea",
+      "id": "card2_desc",
+      "label": "Description",
+      "default": "Robustesse et précision pour les explorateurs des profondeurs."
+    },
+    {
+      "type": "text",
+      "id": "card2_collection",
+      "label": "Handle de collection (URL)",
+      "default": "divers"
+    }
+  ],
   "presets": [{ "name": "Collections Grid" }]
 }
 {% endschema %}
+
