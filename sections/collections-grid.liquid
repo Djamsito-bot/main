@@ -1,0 +1,44 @@
+<section class="collections-grid">
+  <div class="collections-grid__inner">
+    <p class="collections-grid__eyebrow">Nos univers</p>
+    <h2 class="section-title">Explorez nos collections</h2>
+    <div class="section-divider"><span class="section-divider__icon">◆</span></div>
+
+    <div class="collections-grid__cards">
+
+      <a href="/collections/ladies" class="collection-card">
+        <div class="collection-card__image-wrapper">
+          <img src="{{ 'watch-ladies.jpg' | asset_url }}" alt="Montres femme Seiko" loading="lazy">
+          <div class="collection-card__overlay"></div>
+        </div>
+        <div class="collection-card__body">
+          <span class="collection-card__label">Élégance</span>
+          <h3 class="collection-card__title">Collection Femme</h3>
+          <p class="collection-card__desc">Finesse et raffinement pour accompagner chaque moment de votre quotidien.</p>
+          <span class="collection-card__link">Découvrir →</span>
+        </div>
+      </a>
+
+      <a href="/collections/divers" class="collection-card">
+        <div class="collection-card__image-wrapper">
+          <img src="{{ 'watch-diver.jpg' | asset_url }}" alt="Montres plongée Seiko" loading="lazy">
+          <div class="collection-card__overlay"></div>
+        </div>
+        <div class="collection-card__body">
+          <span class="collection-card__label">Aventure</span>
+          <h3 class="collection-card__title">Collection Plongée</h3>
+          <p class="collection-card__desc">Robustesse et précision pour les explorateurs des profondeurs.</p>
+          <span class="collection-card__link">Découvrir →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collections Grid",
+  "presets": [{ "name": "Collections Grid" }]
+}
+{% endschema %}

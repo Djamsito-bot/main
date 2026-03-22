@@ -12,5 +12,11 @@
       }
     }
   },
-  "order": ["hero-banner", "featured-collection"]
+    ,
+    "collections-grid": {
+      "type": "collections-grid",
+      "settings": {}
+    }
+  },
+  "order": ["hero-banner", "collections-grid", "featured-collection"]
 }
