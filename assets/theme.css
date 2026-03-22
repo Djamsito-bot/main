@@ -7,10 +7,13 @@
   --color-gold:    #c9a84c;
   --color-gold-light: #e8c96a;
   --color-white:   #ffffff;
-  --color-bg:      #f7f6f3;
-  --color-text:    #1a1a1a;
-  --color-muted:   #777;
-  --color-border:  #e0ddd6;
+  --color-bg:      #f0f9fb;
+  --color-text:    #1a2e35;
+  --color-muted:   #5a7a85;
+  --color-border:  #b2d8e0;
+  --color-teal:    #0e9ab5;
+  --color-teal-dark: #0a7a90;
+  --color-teal-light: #e0f5f9;
   --font-heading:  'Playfair Display', Georgia, serif;
   --font-body:     'Inter', 'Helvetica Neue', Arial, sans-serif;
   --transition:    0.3s ease;
@@ -37,7 +40,7 @@ body {
 
 /* ===== HEADER ===== */
 .site-header {
-  background-color: var(--color-black);
+  background-color: var(--color-teal-dark);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -134,7 +137,7 @@ body {
   min-height: 580px;
   display: flex;
   align-items: center;
-  background-color: var(--color-black);
+  background-color: var(--color-teal-dark);
   background-size: cover;
   background-position: center center;
   overflow: hidden;
@@ -145,9 +148,9 @@ body {
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(13,13,13,0.92) 0%,
-    rgba(13,13,13,0.75) 45%,
-    rgba(13,13,13,0.2) 100%
+    rgba(10,122,144,0.92) 0%,
+    rgba(10,122,144,0.72) 45%,
+    rgba(10,122,144,0.15) 100%
   );
   z-index: 1;
 }
@@ -328,7 +331,7 @@ body {
 /* ===== COLLECTIONS GRID ===== */
 .collections-grid {
   padding: 80px 24px;
-  background: var(--color-black);
+  background: var(--color-teal-light);
 }
 
 .collections-grid__inner {
@@ -343,12 +346,12 @@ body {
   font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-teal);
   margin-bottom: 12px;
 }
 
 .collections-grid .section-title {
-  color: var(--color-white);
+  color: var(--color-text);
 }
 
 .collections-grid__cards {
@@ -364,13 +367,13 @@ body {
   border-radius: 10px;
   overflow: hidden;
   text-decoration: none;
-  background: #111;
-  border: 1px solid rgba(201,168,76,0.15);
+  background: var(--color-white);
+  border: 1px solid rgba(14,154,181,0.2);
   transition: border-color var(--transition), transform var(--transition);
 }
 
 .collection-card:hover {
-  border-color: var(--color-gold);
+  border-color: var(--color-teal);
   transform: translateY(-4px);
 }
 
@@ -427,13 +430,13 @@ body {
   font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-white);
+  color: var(--color-text);
   margin: 0 0 10px;
 }
 
 .collection-card__desc {
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.6);
+  color: var(--color-muted);
   line-height: 1.6;
   margin: 0 0 20px;
 }
@@ -443,7 +446,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-teal);
   transition: letter-spacing var(--transition);
 }
 
@@ -453,8 +456,8 @@ body {
 
 /* ===== FOOTER ===== */
 .site-footer {
-  background-color: var(--color-black);
-  color: rgba(255,255,255,0.7);
+  background-color: var(--color-teal-dark);
+  color: rgba(255,255,255,0.85);
   padding: 60px 0 28px;
   margin-top: 80px;
 }
